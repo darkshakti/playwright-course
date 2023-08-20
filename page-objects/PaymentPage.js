@@ -5,7 +5,7 @@ export class PaymentPage {
     constructor(page) {
         this.page = page;
 
-        this.discountCode = page.frameLocator('[data-qa="active-discount-container"]');
+        this.discountCode = page.frameLocator('[data-qa="active-discount-container"]')
             .locator('[data-qa="discount-code"]');
         this.discountInput = page.locator('[data-qa="discount-code-input"]');
         this.submitDiscountButton = page.locator('[data-qa="submit-discount-button"]');
