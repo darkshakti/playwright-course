@@ -19,5 +19,5 @@ test.skip("Product Page Add to Basket", async ({ page }) => {
     await checkoutLink.waitFor();
     await checkoutLink.click();
 
-    await page.waitForURL("/basket")
+    await page.waitForURL("/basket");
 })
