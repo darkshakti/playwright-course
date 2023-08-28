@@ -3,6 +3,13 @@ import * as nodeFetch from "node-fetch"
 export const getLoginToken = async () => {
     const response = await nodeFetch("http://localhost:2221/api/login", {
         method: "POST",
-        body: {username: "test@gmail.com", password: "password"},
+        body: JSON.stringify({"username":"admin","password":"Admin123"})
     });
+
+    if (response.status !== 200) {
+        throw new Error("An error occured trying to retrive the login token.");
+    }
+    const body = await response.json();
+
+    return body.token;
 }
